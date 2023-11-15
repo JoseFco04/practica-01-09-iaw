@@ -18,3 +18,5 @@ apt install mysql-server -y
 # Configuramos mysql para que solo acepte conexiones desde la Ip privada
 sed -i "s/127.0.0.1/$MYSQL_PRIVATE_IP/" /etc/mysql/mysql.conf.d/mysqld.cnf
 
+# Reiniciamos el servicio de mysql
+systemctl restart mysql
