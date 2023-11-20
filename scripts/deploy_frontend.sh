@@ -51,17 +51,17 @@ wp config create \
 
   # Actualizamos los pugins 
   wp core update --path=/var/www/html --allow-root
-  
+
   # Actualizamos los temas 
-  wp theme update --path=/var/www/html --allow-root
+  wp theme update --all --path=/var/www/html --allow-root
 
   # Instalo un tema
   wp theme install $TEMA --activate --path=/var/www/html --allow-root
 
-  #
-  wp plugins update --all --path=/var/www/html --allow-root
+  # 
+  wp plugin update --all --path=/var/www/html --allow-root
 
-  #
+  # Instalar y activar un  plugin
   wp plugin install $PLUGIN --activate --path=/var/www/html --allow-root
   wp plugin install $PLUGIN2 --activate --path=/var/www/html --allow-root
 
