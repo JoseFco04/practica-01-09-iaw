@@ -27,5 +27,5 @@ systemctl restart apache2
 # Copiamos el archivo de php 
 cp ../php/index.php /var/www/html
 
-#Modificamos el propietario y el grupo del directorio /var/www/html
+# Modificamos el propietario y el grupo del directorio /var/www/html
 chown -R www-data:www-data /var/www/html

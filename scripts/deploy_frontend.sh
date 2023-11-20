@@ -49,6 +49,36 @@ wp config create \
   --path=/var/www/html \
   --allow-root
 
-  # Instalamos un tema 
+  # Actualizamos los pugins 
+  wp core update --path=/var/www/html --allow-root
+  
+  # Actualizamos los temas 
+  wp theme update --path=/var/www/html --allow-root
 
-  # Instalamos varios plugins 
+  # Instalo un tema
+  wp theme install $TEMA --activate --path=/var/www/html --allow-root
+
+  #
+  wp plugins update --all --path=/var/www/html --allow-root
+
+  #
+  wp plugin install $PLUGIN --activate --path=/var/www/html --allow-root
+  wp plugin install $PLUGIN2 --activate --path=/var/www/html --allow-root
+
+  # 
+  wp rewrite structure '/%postname%/' --path=/var/www/html --allow-root
+
+  # 
+  wp option update wh1_page 'acceso' --path=/var/www/html --allow-root
+
+  #
+  cp ../htaccess/.htaccess /var/www/html
+
+  # Modificamos el propietario y el grupo del directorio /var/www/html
+  chown -R www-data:www-data /var/www/html
+
+  # Copiamos el nuevo archivo .htaccess
+  cp ../htaccess/.htaccess /var/www/html
+
+  #Modificamos el propietario y el grupo del directorio /var/www/html
+  chown -R www-data:www-data /var/www/html
