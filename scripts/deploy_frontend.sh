@@ -49,7 +49,7 @@ wp config create \
   --path=/var/www/html \
   --allow-root
 
-  # Actualizamos los pugins 
+  # Actualizamos los plugins 
   wp core update --path=/var/www/html --allow-root
 
   # Actualizamos los temas 
@@ -58,24 +58,18 @@ wp config create \
   # Instalo un tema
   wp theme install $TEMA --activate --path=/var/www/html --allow-root
 
-  # 
+  # Actualizamos los plugins
   wp plugin update --all --path=/var/www/html --allow-root
 
   # Instalar y activar un  plugin
   wp plugin install $PLUGIN --activate --path=/var/www/html --allow-root
   wp plugin install $PLUGIN2 --activate --path=/var/www/html --allow-root
 
-  # 
+  # Reescribimos la estructura para elegir postname en la estructura de wp
   wp rewrite structure '/%postname%/' --path=/var/www/html --allow-root
 
-  # 
-  wp option update wh1_page 'acceso' --path=/var/www/html --allow-root
-
-  #
-  cp ../htaccess/.htaccess /var/www/html
-
-  # Modificamos el propietario y el grupo del directorio /var/www/html
-  chown -R www-data:www-data /var/www/html
+  # Actualizamos la opción wh1_page 
+  wp option update whl_page 'acceso' --path=/var/www/html --allow-root
 
   # Copiamos el nuevo archivo .htaccess
   cp ../htaccess/.htaccess /var/www/html
