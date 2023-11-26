@@ -68,7 +68,7 @@ wp config create \
   # Reescribimos la estructura para elegir postname en la estructura de wp
   wp rewrite structure '/%postname%/' --path=/var/www/html --allow-root
 
-  # Actualizamos la opción wh1_page 
+  # Actualizamos la opción whl_page 
   wp option update whl_page 'acceso' --path=/var/www/html --allow-root
 
   # Copiamos el nuevo archivo .htaccess
