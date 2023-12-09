@@ -17,3 +17,30 @@
 ### Para esta práctica debemos separar los scripts de instalación en dos un install_lamp y un deploy para el frontend y otros distintos para el del backend.
 
 ### Aparte de estos scripts tenemos que tener el script del lets encrypt que ya hemos usado en prácticas anteriores, un .env con las variables que necesitamos para instalar la aplicación web que debería verse parecido a este:
+~~~
+# Configuramos las variables
+#---------------------------------------------------------
+MYSQL_PRIVATE_IP=172.31.95.202
+
+WORDPRESS_DB_NAME=wordpress
+WORDPRESS_DB_USER=josefco
+WORDPRESS_DB_PASSWORD=1234
+WORDPRESS_DB_HOST=172.31.95.202
+IP_CLIENTE_MYSQL=172.31.82.115
+
+WORDPRESS_TITLE="Sitio web de IAW Jose"
+WORDPRESS_ADMIN_USER=admin 
+WORDPRESS_ADMIN_PASS=admin 
+WORDPRESS_ADMIN_EMAIL=josefco@iaw.com
+
+CB_MAIL=josefco@iaw.com
+CB_DOMAIN=practica9frontjose.ddns.net
+
+TEMA=sydney
+PLUGIN=bbpress
+PLUGIN2=wps-hide-login
+~~~
+### EL archivo de configuración que también hemos usadlo en prácticas anteriores que es el  000-default.conf que se vería así:
+~~~
+
+~~~
