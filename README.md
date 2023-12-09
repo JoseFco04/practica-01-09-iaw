@@ -57,7 +57,17 @@ ServerTokens Prod
   CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ~~~
-Y el .htaccess que se debería ver así:
+### Y el .htaccess que se debería ver así:
 ~~~
-
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
 ~~~
+### Una vez bien puestos estos archivos vamos a crear los scripts que van a ir en la máquina del frontend(que solo hay que ejecutarlo en la máquina virtual del frontend)
