@@ -42,5 +42,22 @@ PLUGIN2=wps-hide-login
 ~~~
 ### EL archivo de configuración que también hemos usadlo en prácticas anteriores que es el  000-default.conf que se vería así:
 ~~~
+ServerSignature Off
+ServerTokens Prod
+<VirtualHost *:80>
+  #ServerName www.example.com
+  DocumentRoot /var/www/html
+  DirectoryIndex index.php index.html
+
+  <Directory "/var/www/html">
+    AllowOverride All
+  </Directory>
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+~~~
+Y el .htaccess que se debería ver así:
+~~~
 
 ~~~
